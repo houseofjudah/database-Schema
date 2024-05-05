@@ -35,6 +35,9 @@ const EmergencyService = new  mongoose.Schema({
     
     
 });
+         //create the index for geospatial queries
+
+   EmergencyService.index({location:"2dsphere"})
 
 const databaseService =  mongoose.model( "EmergencyService", EmergencyService);
 
